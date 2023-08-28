@@ -8,6 +8,9 @@ export default function HomePage() {
       <div>
         <a href="/lottery">Lottery</a>
       </div>
+      <div>
+        <a href="/youbike">Youbike</a>
+      </div>
     </div>
   );
 }

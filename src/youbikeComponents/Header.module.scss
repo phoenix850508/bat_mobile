@@ -1,0 +1,43 @@
+.header {
+  width: 100%;
+  height: 104px;
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.headerLeft {
+  margin: 0 0 0 124px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  .youbikeLogo {
+    width: 95px;
+    height: 95px;
+  }
+  .navItem {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    li:nth-child(3) {
+      color: #b5cc22;
+    }
+  }
+}
+
+.signinButton {
+  margin-right: 124px;
+  padding: 8px;
+  width: 85px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b5cc22;
+  border-radius: 100px;
+  background-color: #b5cc22;
+  color: #fff;
+  line-height: 20px;
+}
