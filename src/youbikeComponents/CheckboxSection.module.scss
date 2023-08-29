@@ -1,0 +1,35 @@
+.checkboxSection {
+  padding-left: 124px;
+  height: 357px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin-bottom: 32px;
+  color: #b5cc22;
+  font-family: Noto Sans CJK TC;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 100% */
+  letter-spacing: 4.32px;
+  text-align: left;
+}
+
+.dropdownMenuWrapper {
+  height: 40px;
+  width: 100%;
+  margin-bottom: 32px;
+  display: flex;
+  gap: 16px;
+}
+
+.checkboxWrapper {
+  flex: 1;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}

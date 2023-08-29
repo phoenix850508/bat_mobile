@@ -1,7 +1,9 @@
 import youbikeLogo from "icons/youbike_logo.svg";
+import { useNavigate } from "react-router-dom";
 import styles from "./Header.module.scss";
 
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <div className={styles.header}>
       <div className={styles.headerLeft}>
@@ -9,6 +11,9 @@ export default function Header() {
           className={styles.youbikeLogo}
           src={youbikeLogo}
           alt="youbike_logo"
+          onClick={() => {
+            navigate("/");
+          }}
         />
         <ul className={styles.navItem}>
           <li>使用說明</li>

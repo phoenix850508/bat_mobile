@@ -1,0 +1,80 @@
+.citySelectorWrapper {
+  width: 175px;
+  position: relative;
+  .arrowDown {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 11px;
+    right: 16px;
+    cursor: pointer;
+  }
+}
+
+.menuList {
+  transform: scale(1, 0);
+  overflow: hidden;
+  li {
+    opacity: 0;
+  }
+}
+
+.selectToggle {
+  display: none;
+  &:checked ~ .menuList {
+    z-index: 999;
+    position: absolute;
+    transform: scale(1, 1);
+    transition: transform 0.3s ease-in-out 0.2s;
+    transform-origin: top;
+    left: 0;
+    top: 52px;
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    background: #f3f3f3;
+    border-radius: 8px;
+
+    li {
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out 0.4s;
+      display: flex;
+      align-items: center;
+      padding: 8px 16px;
+      text-align: start;
+      cursor: pointer;
+
+      &:first-child {
+        padding-top: 16px;
+      }
+      &:last-child {
+        padding-bottom: 16px;
+      }
+
+      &:hover {
+        background-color: #e3e3e3;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.citySelector {
+  padding: 8px 16px;
+  display: flex;
+  width: 175px;
+  height: 40px;
+  padding: 10px 16px;
+  align-items: center;
+  gap: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #f3f3f3;
+  color: #aeaeae;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.selected {
+  color: #323232;
+}
