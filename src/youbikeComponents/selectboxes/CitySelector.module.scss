@@ -1,6 +1,7 @@
 .citySelectorWrapper {
   width: 175px;
   position: relative;
+
   .arrowDown {
     position: absolute;
     width: 18px;
@@ -13,7 +14,6 @@
 
 .menuList {
   transform: scale(1, 0);
-  overflow: hidden;
   li {
     opacity: 0;
   }
@@ -30,10 +30,12 @@
     left: 0;
     top: 52px;
     width: 175px;
+    max-height: 232px;
     display: flex;
     flex-direction: column;
     background: #f3f3f3;
     border-radius: 8px;
+    overflow-y: scroll;
 
     li {
       opacity: 1;

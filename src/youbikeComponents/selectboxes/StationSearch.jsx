@@ -4,15 +4,7 @@ import clsx from "clsx";
 import coloredSearchIcon from "icons/colored_search_icon.svg";
 import styles from "./StationSearch.module.scss";
 
-export default function StationSearch() {
-  const stations = [
-    "台北圓環",
-    "台北市",
-    "新竹科學園區",
-    "台北市",
-    "台北市",
-    "台北市",
-  ];
+export default function StationSearch({ stationArrState }) {
   const [menuItem, setMenuItem] = useState(null);
   const inputTextRef = useRef("");
   const [selectedItem, setSelectedItem] = useState("");
@@ -22,7 +14,7 @@ export default function StationSearch() {
   // 當文字輸入再input內時，找出站點是否有同樣的字
   const handleInputChange = (e) => {
     inputTextRef.current = e.target.value;
-    const filteredStation = stations.filter((element) =>
+    const filteredStation = stationArrState?.filter((element) =>
       element.includes(e.target.value)
     );
     // 若比對後有相同結果，顯示下拉選單
@@ -41,10 +33,12 @@ export default function StationSearch() {
     }
 
     // 若inputText和menuItem一模一樣時，將inputText染色
-    for (let i = 0, length = filteredStation.length; i < length; i++) {
-      if (filteredStation[i] === inputTextRef.current) {
-        setIsInputTextColored(true);
-        return;
+    if (filteredStation) {
+      for (let i = 0, length = filteredStation.length; i < length; i++) {
+        if (filteredStation[i] === inputTextRef.current) {
+          setIsInputTextColored(true);
+          return;
+        }
       }
     }
   };
