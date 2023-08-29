@@ -44,6 +44,7 @@ export default function StationSearch() {
     for (let i = 0, length = filteredStation.length; i < length; i++) {
       if (filteredStation[i] === inputTextRef.current) {
         setIsInputTextColored(true);
+        return;
       }
     }
   };

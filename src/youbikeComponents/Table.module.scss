@@ -1,0 +1,39 @@
+.tableWrapper {
+  margin: 0 124px 0 124px;
+  margin-top: 42px;
+  border: 0.5px solid #aeaeae;
+  border-radius: 28px 28px 28px 28px;
+  overflow: hidden;
+  margin-bottom: 44px;
+}
+
+tr,
+table {
+  width: 100%;
+}
+
+th {
+  height: 66px;
+  line-height: 66px;
+  background: #b5cc22;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+tr {
+  height: 72px;
+  line-height: 72px;
+  font-size: 16px;
+
+  &:nth-child(even) {
+    background: #f6f6f6;
+  }
+
+  td:nth-child(4),
+  td:nth-child(5) {
+    color: #b5cc22;
+    font-weight: 700;
+  }
+}

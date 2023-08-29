@@ -6,12 +6,12 @@ import styles from "./CitySelector.module.scss";
 export default function CitySelector() {
   const cities = [
     "台北市",
-    "台北市",
-    "台北市",
-    "台北市",
-    "台北市",
-    "台北市",
-    "台北市",
+    "新北市",
+    "桃園市",
+    "新竹市",
+    "苗栗市",
+    "台中市",
+    "彰化市",
   ];
   const [selectedCity, setSelectedCity] = useState("選擇城市");
   const isSelectedRef = useRef(false);
