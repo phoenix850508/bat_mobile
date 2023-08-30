@@ -55,7 +55,7 @@ export default function CheckboxSection({ districtsArr, stationArrState }) {
       <Checkbox district="全部選取" onCheckboxClick={handleCheckAllDistrict} />
       <div className={styles.checkboxWrapper}>
         {districtsArr &&
-          districtsArr.map((district, index) => {
+          districtsArr?.map((district, index) => {
             return (
               <Checkbox
                 key={index}
