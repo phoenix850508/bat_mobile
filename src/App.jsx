@@ -20,7 +20,11 @@ function App() {
                 <Route path="*" element={<HomePage />} />
                 <Route path="/sum" element={<Sum />} />
                 <Route path="/lottery" element={<Lottery />} />
-                <Route path="/youbike" element={<YoubikePage />} />
+                <Route path="/youbike/manual" element={<YoubikePage />} />
+                <Route path="/youbike/pay-method" element={<YoubikePage />} />
+                <Route path="/youbike/station-info" element={<YoubikePage />} />
+                <Route path="/youbike/news" element={<YoubikePage />} />
+                <Route path="/youbike/events" element={<YoubikePage />} />
               </Routes>
             </BrowserRouter>
           </CheckedDistrictContextProvider>

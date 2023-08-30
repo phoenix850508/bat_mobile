@@ -3,17 +3,15 @@ import StationSearch from "./selectboxes/StationSearch";
 import Checkbox from "./checkbox/Checkbox";
 import { CheckedDistrictContext } from "context/CheckedDistrictContext";
 import { SelectedStationContext } from "context/SelectedStationContext";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import styles from "./CheckboxSection.module.scss";
 
 export default function CheckboxSection({ districtsArr, stationArrState }) {
   const { districtState, districtDispatch } = useContext(
     CheckedDistrictContext
   );
-  const [isCheckedAll, setIsCheckedAll] = useState(false);
-  const { station, selectedStationDispatch } = useContext(
-    SelectedStationContext
-  );
+  const [isCheckedAll, setIsCheckedAll] = useState(true);
+  const { selectedStationDispatch } = useContext(SelectedStationContext);
 
   // 當checkbox被點擊時
   const handleDistrictClick = (e) => {
@@ -61,6 +59,13 @@ export default function CheckboxSection({ districtsArr, stationArrState }) {
     });
   };
 
+  useEffect(() => {
+    districtDispatch({
+      type: "checked_all",
+      districts: districtsArr,
+    });
+  }, [districtsArr]);
+
   return (
     <section className={styles.checkboxSection}>
       <div className={styles.title}>站點資訊</div>
@@ -68,7 +73,11 @@ export default function CheckboxSection({ districtsArr, stationArrState }) {
         <CitySelector />
         <StationSearch stationArrState={stationArrState} />
       </div>
-      <Checkbox district="全部選取" onCheckboxClick={handleCheckAllDistrict} />
+      <Checkbox
+        district="全部選取"
+        onCheckboxClick={handleCheckAllDistrict}
+        defaultChecked="true"
+      />
       <div className={styles.checkboxWrapper}>
         {districtsArr &&
           districtsArr?.map((district, index) => {
@@ -78,18 +87,24 @@ export default function CheckboxSection({ districtsArr, stationArrState }) {
                 district={district}
                 onCheckboxClick={handleDistrictClick}
                 // 若context中的行政區包括該行政區，讓該checkbox為打勾，否則取消
-                isChecked={districtState.some(
-                  (contextDistr) => contextDistr === district
-                )}
+                isChecked={
+                  districtState
+                    ? districtState.some(
+                        (contextDistr) => contextDistr === district
+                      )
+                    : true
+                }
                 onChange={(e) => {
                   // 若context中的行政區包括該行政區，讓該checkbox為打勾，否則取消
-                  const bool = districtState.some(
-                    (contextDistr) => contextDistr === district
-                  );
+                  const bool =
+                    districtState &&
+                    districtState.some(
+                      (contextDistr) => contextDistr === district
+                    );
                   if (bool) {
-                    e.target.checked = true;
+                    return (e.target.checked = true);
                   } else {
-                    e.target.checked = false;
+                    return (e.target.checked = false);
                   }
                 }}
               />

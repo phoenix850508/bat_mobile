@@ -5,6 +5,7 @@ export default function Checkbox({
   onCheckboxClick,
   isChecked,
   onChange,
+  defaultChecked,
 }) {
   return (
     <div className={styles.CheckboxWrapper}>
@@ -15,6 +16,7 @@ export default function Checkbox({
         onClick={(e) => onCheckboxClick?.(e)}
         checked={isChecked}
         onChange={onChange}
+        defaultChecked={defaultChecked}
       />
       <span>{district}</span>
     </div>

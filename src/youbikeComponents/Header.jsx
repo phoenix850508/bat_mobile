@@ -20,11 +20,11 @@ export default function Header() {
           }}
         />
         <ul className={styles.navItem}>
-          <li>使用說明</li>
-          <li>收費方式</li>
-          <li>站點資訊</li>
-          <li>最新消息</li>
-          <li>活動專區</li>
+          <li onClick={() => navigate("/youbike/manual")}>使用說明</li>
+          <li onClick={() => navigate("/youbike/pay-method")}>收費方式</li>
+          <li onClick={() => navigate("/youbike/station-info")}>站點資訊</li>
+          <li onClick={() => navigate("/youbike/news")}>最新消息</li>
+          <li onClick={() => navigate("/youbike/events")}>活動專區</li>
         </ul>
       </div>
       <div className={styles.signinButton}>登入</div>
