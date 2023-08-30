@@ -1,17 +1,24 @@
 import { CheckedDistrictContext } from "context/CheckedDistrictContext";
 import { SelectedCity } from "context/SelectedCityContext";
+import { SelectedStationContext } from "context/SelectedStationContext";
 import { useState, useContext, useEffect } from "react";
 import styles from "./Table.module.scss";
 
 export default function Table({ youBikeData }) {
   const { state } = useContext(SelectedCity);
   const { districtState } = useContext(CheckedDistrictContext);
+  const { station } = useContext(SelectedStationContext);
   const [filteredYouBikeDataArrState, setFilteredYouBikeDataArrState] =
     useState([]);
   const filteredYouBikeDataArr = [];
 
   useEffect(() => {
-    if (youBikeData && state === "台北市" && districtState) {
+    if (state === "台北市" && station) {
+      const filteredStation = youBikeData.data.find((element) =>
+        element.sna.includes(station)
+      );
+      setFilteredYouBikeDataArrState([filteredStation]);
+    } else if (youBikeData && state === "台北市" && districtState) {
       // 已勾選行政區長度
       const distriLength = districtState.length;
       const completedDistr = [];
@@ -38,7 +45,6 @@ export default function Table({ youBikeData }) {
           // 將youBikeData中符合勾選行政區的新資料加入到filteredYouBikeDataArr陣列
           filteredYouBikeDataArr.push(youBikeData.data[i]);
         }
-        console.log("completedDistr length", completedDistr.length);
         // 若已找到全部行政區，且目前迭代的行政區非目標行政區時，停止
         if (completedDistr.length === distriLength) {
           const toStop = !districtState.find(
@@ -49,9 +55,7 @@ export default function Table({ youBikeData }) {
       }
       setFilteredYouBikeDataArrState(filteredYouBikeDataArr);
     }
-  }, [districtState, state, youBikeData]);
-
-  console.log(filteredYouBikeDataArrState);
+  }, [districtState, state, youBikeData, station]);
 
   return (
     <div className={styles.tableWrapper}>

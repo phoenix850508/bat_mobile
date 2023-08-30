@@ -2,6 +2,7 @@ import CitySelector from "./selectboxes/CitySelector";
 import StationSearch from "./selectboxes/StationSearch";
 import Checkbox from "./checkbox/Checkbox";
 import { CheckedDistrictContext } from "context/CheckedDistrictContext";
+import { SelectedStationContext } from "context/SelectedStationContext";
 import { useState, useContext } from "react";
 import styles from "./CheckboxSection.module.scss";
 
@@ -10,6 +11,9 @@ export default function CheckboxSection({ districtsArr, stationArrState }) {
     CheckedDistrictContext
   );
   const [isCheckedAll, setIsCheckedAll] = useState(false);
+  const { station, selectedStationDispatch } = useContext(
+    SelectedStationContext
+  );
 
   // 當checkbox被點擊時
   const handleDistrictClick = (e) => {
@@ -26,7 +30,15 @@ export default function CheckboxSection({ districtsArr, stationArrState }) {
         districts: e.target.name,
       });
     }
+
+    // 當點擊checkbox時，將station清除
+    selectedStationDispatch({
+      type: "select_station",
+      station: "",
+    });
   };
+
+  console.log("station", station);
 
   // 當全部選取被點擊時
   const handleCheckAllDistrict = (e) => {
@@ -43,6 +55,12 @@ export default function CheckboxSection({ districtsArr, stationArrState }) {
         type: "unchecked_all",
       });
     }
+
+    // 當點擊checkbox時，將station清除
+    selectedStationDispatch({
+      type: "select_station",
+      station: "",
+    });
   };
 
   return (

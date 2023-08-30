@@ -35,7 +35,8 @@ export default function YoubikePage() {
     youBikeData &&
       youBikeData.data.forEach((element, index) => {
         // 加入車站
-        const apiStation = element.sna.slice(11, -1);
+        const stationLength = element.sna.length;
+        const apiStation = element.sna.slice(11, stationLength);
         stationArr.push(apiStation);
         // 先加入第一個行政區
         const apiDistr = element.sarea;

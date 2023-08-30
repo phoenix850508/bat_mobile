@@ -1,5 +1,6 @@
 import serchIcon from "icons/search_icon.svg";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
+import { SelectedStationContext } from "context/SelectedStationContext";
 import clsx from "clsx";
 import coloredSearchIcon from "icons/colored_search_icon.svg";
 import styles from "./StationSearch.module.scss";
@@ -7,9 +8,9 @@ import styles from "./StationSearch.module.scss";
 export default function StationSearch({ stationArrState }) {
   const [menuItem, setMenuItem] = useState(null);
   const inputTextRef = useRef("");
-  const [selectedItem, setSelectedItem] = useState("");
   const [isDropDown, setIsDropDown] = useState(false);
   const [isInputTextColored, setIsInputTextColored] = useState(false);
+  const { selectedStationDispatch } = useContext(SelectedStationContext);
 
   // 當文字輸入再input內時，找出站點是否有同樣的字
   const handleInputChange = (e) => {
@@ -75,7 +76,10 @@ export default function StationSearch({ stationArrState }) {
                 key={index}
                 onClick={() => {
                   inputTextRef.current = item;
-                  setSelectedItem(item);
+                  selectedStationDispatch({
+                    type: "select_station",
+                    station: item,
+                  });
                   setIsDropDown(false);
                   setIsInputTextColored(false);
                 }}
