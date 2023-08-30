@@ -4,6 +4,8 @@ import { useState, useEffect, useContext } from "react";
 import { getTaipeiYouBikeData } from "api/youbike";
 import { SelectedCity } from "context/SelectedCityContext";
 import { dummyDistrictData } from "youbikeComponents/dummyData/dummyDistrictData";
+import { CheckedDistrictContext } from "context/CheckedDistrictContext";
+
 import styles from "./Midsection.module.scss";
 
 export default function Midsection() {
@@ -49,7 +51,7 @@ export default function Midsection() {
       });
 
     setStationArrState(stationArr);
-    // 若資料為空，加入假資料
+    // 若車站資料為空，加入假資料
     setDistrictsArrState(
       districtsArr.length === 0 ? dummyDistrictData : districtsArr
     );
