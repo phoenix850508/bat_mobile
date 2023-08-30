@@ -1,10 +1,12 @@
+@use "reuseable";
+
 .tableWrapper {
-  margin: 0 124px 0 124px;
-  margin-top: 42px;
+  margin: 0 32px 0 32px;
+  margin-top: 24px;
   border: 0.5px solid #aeaeae;
-  border-radius: 28px 28px 28px 28px;
+  border-radius: 8px 8px 8px 8px;
   overflow: hidden;
-  margin-bottom: 44px;
+  margin-bottom: 34px;
 }
 
 tr,
@@ -13,12 +15,13 @@ table {
 }
 
 th {
-  min-width: 150px;
+  max-width: 150px;
+  min-width: 80px;
   height: 66px;
   line-height: 66px;
   background: #b5cc22;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
 }
@@ -26,7 +29,7 @@ th {
 tr {
   height: 72px;
   line-height: 72px;
-  font-size: 16px;
+  font-size: 14px;
 
   &:nth-child(even) {
     background: #f6f6f6;
@@ -36,5 +39,52 @@ tr {
   td:nth-child(5) {
     color: #b5cc22;
     font-weight: 700;
+  }
+}
+
+.max_screen_hide {
+  display: none;
+}
+
+@media (min-width: reuseable.$break-point) {
+  .tableWrapper {
+    margin: 0 124px 0 124px;
+    margin-top: 42px;
+    border: 0.5px solid #aeaeae;
+    border-radius: 28px 28px 28px 28px;
+    overflow: hidden;
+    margin-bottom: 44px;
+  }
+
+  tr,
+  table {
+    width: 100%;
+  }
+
+  th {
+    min-width: 150px;
+    height: 66px;
+    line-height: 66px;
+    background: #b5cc22;
+    color: #fff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  tr {
+    height: 72px;
+    line-height: 72px;
+    font-size: 16px;
+
+    &:nth-child(even) {
+      background: #f6f6f6;
+    }
+
+    td:nth-child(4),
+    td:nth-child(5) {
+      color: #b5cc22;
+      font-weight: 700;
+    }
   }
 }

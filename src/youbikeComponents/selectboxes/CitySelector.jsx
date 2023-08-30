@@ -32,7 +32,7 @@ export default function CitySelector() {
         id="selectToggle"
         className={styles.selectToggle}
       />
-      <label htmlFor="selectToggle">
+      <label className={styles.label} htmlFor="selectToggle">
         <div
           className={clsx(styles.citySelector, {
             [styles.selected]: isSelectedRef.current,

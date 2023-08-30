@@ -38,8 +38,6 @@ export default function CheckboxSection({ districtsArr, stationArrState }) {
     });
   };
 
-  console.log("station", station);
-
   // 當全部選取被點擊時
   const handleCheckAllDistrict = (e) => {
     setIsCheckedAll(!isCheckedAll);

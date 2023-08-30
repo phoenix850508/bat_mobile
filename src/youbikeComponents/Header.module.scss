@@ -1,55 +1,141 @@
+@use "reuseable";
+
 .header {
   position: sticky;
   top: 0;
   z-index: 999;
   width: 100%;
-  height: 104px;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  height: 72px;
+  display: flex;
   justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid #ebebeb;
   background-color: #fff;
-  font-size: 18px;
-  overflow: hidden;
 }
 
 .headerLeft {
-  margin-left: 124px;
+  margin-left: 32px;
   display: flex;
   align-items: center;
-  gap: 60px;
   .youbikeLogo {
-    width: 95px;
-    height: 95px;
+    width: 65px;
+    height: 65px;
     cursor: pointer;
   }
   .navItem {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-
-    li:nth-child(3) {
-      color: #b5cc22;
-    }
+    display: none;
   }
 }
 
 .signinButton {
-  justify-self: flex-end;
-  margin-right: 124px;
-  padding: 8px;
-  width: 85px;
-  height: 40px;
+  display: none;
+}
+
+.mobileNavItem {
+  position: absolute;
+  transform: scale(1, 0);
+}
+
+.hamburgerToggle {
+  display: none;
+
+  &:checked ~ .mobileNavItem {
+    display: block;
+    transform: scale(1, 1);
+    transition: transform 0.3s ease-in-out 0.3s;
+    transform-origin: top;
+    top: 100%;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 32px;
+    padding-left: 32px;
+    background-color: #b5cc22;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: left;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    li {
+      cursor: pointer;
+    }
+
+    & li:nth-child(3) {
+      color: #677510;
+    }
+  }
+}
+
+.label {
+  margin-right: 32px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  border: 1px solid #b5cc22;
-  border-radius: 100px;
-  background-color: #b5cc22;
-  color: #fff;
-  line-height: 20px;
-  cursor: pointer;
+  .hamburger {
+    height: 24px;
+    width: 24px;
+    align-self: center;
+  }
+}
+
+@media (min-width: reuseable.$break-point) {
+  .header {
+    height: 104px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 18px;
+    overflow: hidden;
+  }
+
+  .headerLeft {
+    margin-left: 124px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    .youbikeLogo {
+      width: 95px;
+      height: 95px;
+      cursor: pointer;
+    }
+    .navItem {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+
+      li:nth-child(3) {
+        color: #b5cc22;
+      }
+    }
+  }
+
+  .signinButton {
+    justify-self: flex-end;
+    margin-right: 124px;
+    padding: 8px;
+    width: 85px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #b5cc22;
+    border-radius: 100px;
+    background-color: #b5cc22;
+    color: #fff;
+    line-height: 20px;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .mobileNavItem {
+    display: none;
+  }
 }

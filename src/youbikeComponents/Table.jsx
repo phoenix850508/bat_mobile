@@ -65,8 +65,8 @@ export default function Table({ youBikeData }) {
             <th>縣市</th>
             <th>區域</th>
             <th>站點名稱</th>
-            <th>可借車輛</th>
-            <th>可還空位</th>
+            <th className={styles.max_screen_hide}>可借車輛</th>
+            <th className={styles.max_screen_hide}>可還空位</th>
           </tr>
         </thead>
         <tbody>
@@ -75,9 +75,9 @@ export default function Table({ youBikeData }) {
               <tr key={index}>
                 <td>{state}</td>
                 <td>{element.sarea}</td>
-                <td>{element.ar}</td>
-                <td>{element.sbi}</td>
-                <td>{element.bemp}</td>
+                <td>{element.sna}</td>
+                <td className={styles.max_screen_hide}>{element.sbi}</td>
+                <td className={styles.max_screen_hide}>{element.bemp}</td>
               </tr>
             );
           })}

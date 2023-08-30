@@ -1,11 +1,27 @@
+@use "reuseable";
+
 .main {
-  margin-top: 32px;
+  margin-top: 24px;
   position: relative;
   display: flex;
   justify-content: space-between;
 }
 
 .bikesScratch {
-  margin-right: 196px;
-  align-self: flex-end;
+  display: none;
+}
+
+@media (min-width: reuseable.$break-point) {
+  .main {
+    margin-top: 32px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bikesScratch {
+    display: block;
+    margin-right: 196px;
+    align-self: flex-end;
+  }
 }
