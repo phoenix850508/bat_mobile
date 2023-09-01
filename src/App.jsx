@@ -12,12 +12,13 @@ import "./App.css";
 const basename = process.env.PUBLIC_URL;
 
 function App() {
+  console.log(basename);
   return (
     <div className="App">
-      <SelectedStationContextProvider>
-        <SelectedCityContextProvider>
-          <CheckedDistrictContextProvider>
-            <BrowserRouter basename={basename}>
+      <BrowserRouter basename={basename}>
+        <SelectedStationContextProvider>
+          <SelectedCityContextProvider>
+            <CheckedDistrictContextProvider>
               <Routes>
                 <Route path="*" element={<HomePage />} />
                 <Route path="/sum" element={<Sum />} />
@@ -28,10 +29,10 @@ function App() {
                 <Route path="/youbike/news" element={<YoubikePage />} />
                 <Route path="/youbike/events" element={<YoubikePage />} />
               </Routes>
-            </BrowserRouter>
-          </CheckedDistrictContextProvider>
-        </SelectedCityContextProvider>
-      </SelectedStationContextProvider>
+            </CheckedDistrictContextProvider>
+          </SelectedCityContextProvider>
+        </SelectedStationContextProvider>
+      </BrowserRouter>
     </div>
   );
 }
