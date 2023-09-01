@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bat_mobile/static/css/main.c648d295.css",
-    "main.js": "/bat_mobile/static/js/main.a5804cb7.js",
+    "main.js": "/bat_mobile/static/js/main.d4e08ce5.js",
     "static/js/787.f1ac816c.chunk.js": "/bat_mobile/static/js/787.f1ac816c.chunk.js",
     "static/media/bikes_scratch.svg": "/bat_mobile/static/media/bikes_scratch.b51076d691419435046b4f250b9ffc82.svg",
     "static/media/youbike_logo.svg": "/bat_mobile/static/media/youbike_logo.2d6e792c253279de5e30118aeb95a8b7.svg",
@@ -12,11 +12,11 @@
     "static/media/hamburger.svg": "/bat_mobile/static/media/hamburger.4966ca2d3fb1751c1910f87b8e1192dd.svg",
     "static/media/arrow_down.svg": "/bat_mobile/static/media/arrow_down.67f58277153d2483b4a1e8e726352afa.svg",
     "main.c648d295.css.map": "/bat_mobile/static/css/main.c648d295.css.map",
-    "main.a5804cb7.js.map": "/bat_mobile/static/js/main.a5804cb7.js.map",
+    "main.d4e08ce5.js.map": "/bat_mobile/static/js/main.d4e08ce5.js.map",
     "787.f1ac816c.chunk.js.map": "/bat_mobile/static/js/787.f1ac816c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c648d295.css",
-    "static/js/main.a5804cb7.js"
+    "static/js/main.d4e08ce5.js"
   ]
 }
