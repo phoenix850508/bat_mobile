@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Sum() {
   // 寫一個函式計算下列公式之總和：1+2-3+4-5+6-.....+ 或 -  N
@@ -27,6 +28,8 @@ export default function Sum() {
       setTotal(arr.reduce((accum, current) => accum + current, 0));
     }
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="pt-5 position-relative">
@@ -58,9 +61,13 @@ export default function Sum() {
         </button>
       </div>
       {total !== null && <h3>value of sum = {total}</h3>}
-      <a className="position-absolute top-0 end-0" href="/">
+      <div
+        className="link-primary position-absolute top-0 end-0"
+        onClick={() => navigate("/")}
+        style={{ cursor: "pointer" }}
+      >
         返回首頁
-      </a>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // 抽抽樂總共有五種獎項, 1,2 獎各只有一個, 3 獎有 2 個，4 獎有 5 個，5 獎有 11 個，請寫出一個程式可以「隨機」的取得「不重複」的禮物，
 
@@ -86,6 +87,8 @@ export default function Lottery() {
       setAlertStyle("alert alert-warning mb-3");
     }
   };
+
+  const navigate = useNavigate();
   return (
     <div className="pt-5 position-relative">
       <div className={alertStyle} role="alert">
@@ -104,9 +107,13 @@ export default function Lottery() {
           抽獎
         </button>
       )}
-      <a className="position-absolute top-0 end-0" href="/">
+      <div
+        className="link-primary position-absolute top-0 end-0"
+        onClick={() => navigate("/")}
+        style={{ cursor: "pointer" }}
+      >
         返回首頁
-      </a>
+      </div>
     </div>
   );
 }
