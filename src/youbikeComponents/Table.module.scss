@@ -40,10 +40,10 @@ tr {
     color: #b5cc22;
     font-weight: 700;
   }
-}
 
-.max_screen_hide {
-  display: none;
+  td.col_2 {
+    outline: solid red 2px;
+  }
 }
 
 @media (min-width: reuseable.$break-point) {
@@ -86,5 +86,11 @@ tr {
       color: #b5cc22;
       font-weight: 700;
     }
+  }
+}
+
+@media (max-width: reuseable.$break-point) {
+  .max_screen_hide {
+    display: none;
   }
 }

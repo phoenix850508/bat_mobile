@@ -2,6 +2,7 @@ import { CheckedDistrictContext } from "context/CheckedDistrictContext";
 import { SelectedCity } from "context/SelectedCityContext";
 import { SelectedStationContext } from "context/SelectedStationContext";
 import { useState, useContext, useEffect } from "react";
+import clsx from "clsx";
 import styles from "./Table.module.scss";
 
 export default function Table({ youBikeData }) {
