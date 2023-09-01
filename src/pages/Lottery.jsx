@@ -39,7 +39,6 @@ export default function Lottery() {
     // 產生隨機號碼
     const randomNumber = Math.random();
     let index = 0;
-    console.log("randomNumber", randomNumber);
     for (let prize of prizies) {
       // 當loop過每一個獎項，累積該獎項的中獎機率
       cumulativePropability += prize.probability;
