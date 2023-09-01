@@ -13,11 +13,11 @@ const basename = process.env.PUBLIC_URL;
 
 function App() {
   return (
-    <div className="App" basename={basename}>
+    <div className="App">
       <SelectedStationContextProvider>
         <SelectedCityContextProvider>
           <CheckedDistrictContextProvider>
-            <BrowserRouter>
+            <BrowserRouter basename={basename}>
               <Routes>
                 <Route path="*" element={<HomePage />} />
                 <Route path="/sum" element={<Sum />} />
