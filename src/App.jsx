@@ -9,9 +9,11 @@ import { SelectedStationContextProvider } from "context/SelectedStationContext";
 import "reset.module.scss";
 import "./App.css";
 
+const basename = process.env.PUBLIC_URL;
+
 function App() {
   return (
-    <div className="App">
+    <div className="App" basename={basename}>
       <SelectedStationContextProvider>
         <SelectedCityContextProvider>
           <CheckedDistrictContextProvider>
