@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/bat_mobile/static/css/main.c648d295.css",
+    "main.js": "/bat_mobile/static/js/main.773c49ee.js",
+    "static/js/787.f1ac816c.chunk.js": "/bat_mobile/static/js/787.f1ac816c.chunk.js",
+    "static/media/bikes_scratch.svg": "/bat_mobile/static/media/bikes_scratch.b51076d691419435046b4f250b9ffc82.svg",
+    "static/media/youbike_logo.svg": "/bat_mobile/static/media/youbike_logo.2d6e792c253279de5e30118aeb95a8b7.svg",
+    "index.html": "/bat_mobile/index.html",
+    "static/media/colored_search_icon.svg": "/bat_mobile/static/media/colored_search_icon.c98c6ce503f8c5f8fa24938c359e5db7.svg",
+    "static/media/search_icon.svg": "/bat_mobile/static/media/search_icon.ecf9572cb85b48d21d30a3ec686a1a70.svg",
+    "static/media/cross.svg": "/bat_mobile/static/media/cross.095e20f7e949488a32c787bb81bf738d.svg",
+    "static/media/hamburger.svg": "/bat_mobile/static/media/hamburger.4966ca2d3fb1751c1910f87b8e1192dd.svg",
+    "static/media/arrow_down.svg": "/bat_mobile/static/media/arrow_down.67f58277153d2483b4a1e8e726352afa.svg",
+    "main.c648d295.css.map": "/bat_mobile/static/css/main.c648d295.css.map",
+    "main.773c49ee.js.map": "/bat_mobile/static/js/main.773c49ee.js.map",
+    "787.f1ac816c.chunk.js.map": "/bat_mobile/static/js/787.f1ac816c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c648d295.css",
+    "static/js/main.773c49ee.js"
+  ]
+}
